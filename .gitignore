@@ -1,0 +1,16 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Exclude All Cache Files and Directories
+.cache/
+*.pytest_cache/
+*.mypy_cache/
+*.pdm_cache/
+__pycache__/
+
+#For better security ignoring .env file
+#.env
+
+Test/

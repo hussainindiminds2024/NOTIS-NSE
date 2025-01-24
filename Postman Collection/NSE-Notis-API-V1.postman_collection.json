@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "e8cb187b-082c-44d4-9479-6fee48bb6f39",
+		"name": "NSE-API-Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38689250"
+	},
+	"item": [
+		{
+			"name": "NOTIS-CM",
+			"item": [
+				{
+					"name": "Actions Inquiry",
+					"item": [
+						{
+							"name": "Actions Inquiry ALL  ",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer f302734d-d9bf-48c7-af2d-9afcffd443cc",
+										"type": "text"
+									},
+									{
+										"key": "nonce",
+										"value": "MjAwMTIwMjUwNTU1MTA4MzY6NjE3NjA3",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \r\n    \"version\": \"1.0\",  \r\n    \"data\": {  \r\n    \"msgId\": \"00240201310140000001\",    \r\n    \"dataFormat\": \"CSV:CSV\",  \r\n    \"actionsInquiry\": \"0,ALL,, \"  \r\n    }  \r\n}  ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://www.devconnect2nse.com/notis-cm/actions-inquiry",
+									"protocol": "https",
+									"host": [
+										"www",
+										"devconnect2nse",
+										"com"
+									],
+									"path": [
+										"notis-cm",
+										"actions-inquiry"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actions Inquiry TM",
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \r\n   \"version\": \"1.0\",  \r\n   \"data\": {  \r\n      \"msgId\": \"00240201310140000001\",    \r\n      \"dataFormat\": \"CSV:CSV\",  \r\n      \"actionsInquiry\": \"0,TMACTIONS,, \"  \r\n   }  \r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://www.devconnect2nse.com /api/notis-cm/actions-inquiry HTTP/1.1  ",
+									"protocol": "https",
+									"host": [
+										"www",
+										"devconnect2nse",
+										"com "
+									],
+									"path": [
+										"api",
+										"notis-cm",
+										"actions-inquiry HTTP",
+										"1.1  "
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Trade Inquiry",
+					"item": [
+						{
+							"name": "Trade Inquiry ALL Trades",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer f302734d-d9bf-48c7-af2d-9afcffd443cc",
+										"type": "text"
+									},
+									{
+										"key": "nonce",
+										"value": "MjAwMTIwMjUwNTMzMzQ3NDU6NjcxMjYw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"version\": \"1.0\",   \r\n    \"data\": {   \r\n    \"msgId\": \"08565202501200000001\",   \r\n    \"dataFormat\": \"CSV:CSV\",   \r\n    \"tradesInquiry\": \"0,TMTRADES,,\"   \r\n    }   \r\n}  ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://www.devconnect2nse.com/notis-cm/trades-inquiry?grant_type=client_credentials",
+									"protocol": "https",
+									"host": [
+										"www",
+										"devconnect2nse",
+										"com"
+									],
+									"path": [
+										"notis-cm",
+										"trades-inquiry"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Trade Inquiry TMTRADES Trades",
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer f302734d-d9bf-48c7-af2d-9afcffd443cc",
+										"type": "text"
+									},
+									{
+										"key": "nonce",
+										"value": "MjAwMTIwMjUwNTM2MDEzNTM6MjExNDc5",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {    \r\n    \"version\": \"1.0\",   \r\n    \"data\": {   \r\n    \"msgId\": \"00240201310140000002\",   \r\n    \"dataFormat\": \"CSV:CSV\",   \r\n    \"tradesInquiry\": \"0,TMTRADES,,\"   \r\n    }   \r\n}   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://www.devconnect2nse.com/api/notis-cm/trades-inquiry HTTP/1.1 ",
+									"protocol": "https",
+									"host": [
+										"www",
+										"devconnect2nse",
+										"com"
+									],
+									"path": [
+										"api",
+										"notis-cm",
+										"trades-inquiry HTTP",
+										"1.1 "
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NOTIS-FO",
+			"item": [
+				{
+					"name": "Trade Inquiry",
+					"item": [
+						{
+							"name": "Trade Inquiry ALL",
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer f302734d-d9bf-48c7-af2d-9afcffd443cc",
+										"type": "text"
+									},
+									{
+										"key": "nonce",
+										"value": "MjAwMTIwMjUwNjMzNTIxMzk6NTAzMDU2",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"version\": \"1.0\",   \r\n    \"data\": {   \r\n    \"msgId\": \"08565202501200000002\",   \r\n    \"dataFormat\": \"CSV:CSV\",   \r\n    \"tradesInquiry\": \"0,ALL,,\"   \r\n    }   \r\n}  ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://www.devconnect2nse.com/inquiry-fo/trades-inquiry",
+									"protocol": "https",
+									"host": [
+										"www",
+										"devconnect2nse",
+										"com"
+									],
+									"path": [
+										"inquiry-fo",
+										"trades-inquiry"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Trade Inquiry TMTRADES",
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "nonce",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"version\": \"1.0\",   \r\n    \"data\": {   \r\n    \"msgId\": \"00240201310140000001\",   \r\n    \"dataFormat\": \"CSV:CSV\",   \r\n    \"tradesInquiry\": \"0,TMTRADES,,\"   \r\n    }   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://www.devconnect2nse.com/api/inquiry-fo/trades-inquiry HTTP/1.1  ",
+									"protocol": "https",
+									"host": [
+										"www",
+										"devconnect2nse",
+										"com"
+									],
+									"path": [
+										"api",
+										"inquiry-fo",
+										"trades-inquiry HTTP",
+										"1.1  "
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Actions Inquiry",
+					"item": [
+						{
+							"name": "Actions Inquiry ALL",
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer f302734d-d9bf-48c7-af2d-9afcffd443cc",
+										"type": "text"
+									},
+									{
+										"key": "nonce",
+										"value": "MjAwMTIwMjUwNjMzNTIxMzk6NTAzMDIz",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \r\n   \"version\": \"1.0\",  \r\n   \"data\": {  \r\n      \"msgId\": \"08565202501200000002\",    \r\n      \"dataFormat\": \"CSV:CSV\",  \r\n      \"actionsInquiry\": \"0,ALL,, \"  \r\n   }  \r\n}  ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://www.devconnect2nse.com/inquiry-fo/actions-inquiry",
+									"protocol": "https",
+									"host": [
+										"www",
+										"devconnect2nse",
+										"com"
+									],
+									"path": [
+										"inquiry-fo",
+										"actions-inquiry"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NOTIS-RequestForToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "b25ae0b25f3b4035a5940754a6cd3e05",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "af0ae1af02454639b613c481218a36b1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "nonce",
+						"value": "MjAwMTIwMjUwNDQ2MjA0NTQ6NTgwMDA1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.devconnect2nse.com/token",
+					"protocol": "https",
+					"host": [
+						"www",
+						"devconnect2nse",
+						"com"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
