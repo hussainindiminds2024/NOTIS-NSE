@@ -1,3 +1,4 @@
+import json
 
 def data_parser(response):
     
@@ -22,3 +23,12 @@ def data_parser(response):
     print(type(result))
 
     return result
+
+with open("C:/Projects/NOTIS-NSE/SampleResponse/tradeall_response.txt","r") as File:
+    content = File.read()
+    json_content = json.loads(content)
+
+result = data_parser(json_content)
+
+with open("C:/Projects/NOTIS-NSE/SampleResponse/parsed_response.txt","w") as File:
+    File.write(result)

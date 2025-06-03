@@ -14,7 +14,7 @@ load_dotenv()
 async def fo_trade_inquiry(access_token, fileparameter, nonce, msgid):
     # Set up the endpoint
     base_url = os.getenv('DEV_API_BASE_URL')
-    entrypoint = "/inquiry-fo/trades-inquiry"
+    entrypoint = "/inquiry-fo-2/trades-inquiry"
     endpoint = f"{base_url}{entrypoint}"
     print(endpoint)
 

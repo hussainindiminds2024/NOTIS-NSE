@@ -11,6 +11,10 @@ __pycache__/
 __pycache__/
 
 #For better security ignoring .env file
-#.env
+.env
 
 Test/
+
+/SampleResponse
+/Response
+/PostmanCollection

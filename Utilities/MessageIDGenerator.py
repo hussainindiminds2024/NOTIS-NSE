@@ -37,3 +37,4 @@ def generate_request_number():
     initial_request_number += 1
 
     return msgid
+

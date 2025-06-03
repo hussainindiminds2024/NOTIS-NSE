@@ -1,2 +1,5 @@
 #base64,datetime,random,sys,os,dotenv
-requests
+requests 
+pyodbc
+aiohttp
+python-dotenv

@@ -24,3 +24,4 @@ def get_N_Once():
     encoded_formatted_string = Base64encoder.base64encoder(formatted_string)
     
     return encoded_formatted_string
+

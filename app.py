@@ -9,9 +9,8 @@ from Utilities import FileWriter
 from Utilities import FolderPathUtility
 
 import time
+from datetime import datetime, timedelta
 import asyncio
-
-access_token = AccessToken.get_access_token()
 
 # File paths for CM and FO with today's date
 cm_all_trade_inquiry_path, cm_tm_trade_inquiry_path, fo_all_trade_inquiry_path, fo_tm_trade_inquiry_path = FolderPathUtility.create_date_based_folders()
@@ -19,9 +18,19 @@ cm_all_trade_inquiry_path, cm_tm_trade_inquiry_path, fo_all_trade_inquiry_path, 
 
 async def main():
     extension = ".txt"
+    access_token = AccessToken.get_access_token()
+    last_token_refresh_time = datetime.now()
 
     while True:
         try:
+            now = datetime.now()
+
+            # Refresh token every 30 minutes
+            if now - last_token_refresh_time >= timedelta(minutes=30):
+                print("Refreshing access token...")
+                access_token = AccessToken.get_access_token()
+                last_token_refresh_time = now
+
             msgid = MessageIDGenerator.generate_request_number()
             nonce = NonceGenerator.get_N_Once()
 
@@ -39,8 +48,8 @@ async def main():
             fo_tm_trade_inquiry_response = await get_fo_trade_inquiry_response(access_token, "TMTRADES", nonce, msgid)
             await FileWriter.write_content(fo_tm_trade_inquiry_response, fo_tm_trade_inquiry_path, f"FO_TM_TRADES{extension}")
 
-            # Wait for 5 seconds before the next iteration
-            await asyncio.sleep(5)
+            # Wait for 30 seconds before next iteration
+            await asyncio.sleep(30)
 
         except Exception as e:
             print(f"Unexpected error in main loop: {e}")
