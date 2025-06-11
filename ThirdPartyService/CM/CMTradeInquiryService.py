@@ -11,7 +11,7 @@ sys.path.append(project_root)
 # Load environment variables
 load_dotenv()
 
-async def cm_trade_inquiry(access_token, fileparameter, nonce, msgid):
+async def cm_trade_inquiry(access_token, fileparameter, nonce, msgid, maxTradeSeq):
     # Set up the endpoint
     base_url = os.getenv('DEV_API_BASE_URL')
     entrypoint = "/notis-cm/trades-inquiry"
@@ -31,7 +31,7 @@ async def cm_trade_inquiry(access_token, fileparameter, nonce, msgid):
         "data": {
             "msgId": f"{msgid}",
             "dataFormat": "CSV:CSV",
-            "tradesInquiry": f"0,{fileparameter},,"
+            "tradesInquiry": f"{maxTradeSeq},{fileparameter},,"
         }
     }
 

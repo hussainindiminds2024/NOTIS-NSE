@@ -38,3 +38,6 @@ def generate_request_number():
 
     return msgid
 
+msgid = generate_request_number()
+print(msgid)
+
